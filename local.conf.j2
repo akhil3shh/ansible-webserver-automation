@@ -1,0 +1,12 @@
+frontend loadbalancer
+        bind *:8080
+        timeout client 10s
+        default_backend webserver
+
+backend webserver
+        balance roundrobin
+        timeout connect 10s
+        timeout server 10s
+{% for ip in groups['webserver']%}
+        server app{{ loop.index }} {{ ip }}:80
+{% endfor %}
