@@ -1,0 +1,17 @@
+- hosts: loadbalancer
+  tasks:
+    - name: "Installing HAProxy Load Balancer"
+      package: 
+        name: "haproxy"
+        state: present
+
+    - name: "Registering webservers by adding them in configuration files"
+      template:
+        src: "local.conf.j2"
+        dest: "/etc/haproxy/haproxy.cfg"
+
+    - name: "Starting the Load Balancer"
+      service:
+        name: "haproxy"
+        state: restarted
+        enabled: true
