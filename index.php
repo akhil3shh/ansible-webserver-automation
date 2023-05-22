@@ -2,4 +2,4 @@
     <?php
     print r($ SERVER);
     ?>
->?pre>
+</pre>
