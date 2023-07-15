@@ -3,8 +3,7 @@
 This project demonstrates horizontal scaling of web servers using Ansible using Round Robin algorithm for   
 load-balancing, HAProxy as reverse proxy (frontend webserver) and Apache's HTTP as backend server.
 
-Steps to follow: 
-
+# Major Steps to follow: 
 1.) Create 5 AWS EC2 t2.micro instances - one for Ansible Controller node, one for the load-balancer and remaining three for
 the web servers.    
 2.) Install required dependencies on the instances and update the instances.  
